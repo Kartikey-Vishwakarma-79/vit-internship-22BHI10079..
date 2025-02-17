@@ -3,100 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VIT Ethnus MERN Certification Assignments by Kartikey Vishwakarma">
     <title>VIT Ethnus Mern Certification Assignment 1</title>
     <style>
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #333;
+            --background-color: #f4f7f6;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f7f6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--background-color);
         }
+
         header {
-            background-color: #007BFF;
+            background-color: var(--primary-color);
             color: white;
-            padding: 20px;
+            padding: 2rem;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        header h1 {
-            margin: 0;
-        }
+
         .container {
-            padding: 20px;
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
+
+        .task-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
         h2 {
-            text-align: center;
-            color: #333;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
         }
-        h3 {
-            color: #007BFF;
-            margin-top: 30px;
-        }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            color: #0056b3;
-        }
+
         .task-list {
-            margin-left: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
         }
+
+        .task-list li {
+            background: #f8f9fa;
+            border-radius: 5px;
+            padding: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .task-list li:hover {
+            transform: translateY(-3px);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         footer {
-            background-color: #333;
+            background-color: var(--secondary-color);
             color: white;
             text-align: center;
-            padding: 10px 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .task-section {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>VIT Ethnus MERN Certification Assignment 1</h1>
+        <p>By: Kartikey Vishwakarma</p>
+    </header>
 
-<header>
-    <h1>VIT Ethnus MERN Certification Assignment 1</h1>
-    <p>By: Kartikey_Vishwakarma</p>
-</header>
+    <div class="container">
+        <div class="task-section">
+            <h2>Student Information</h2>
+            <p><strong>Reg. No:</strong> 22BHI10079</p>
+            <p><strong>Email:</strong> <a href="mailto:kartikeyvishwakarma2022@vitbhopal.ac.in">kartikeyvishwakarma2022@vitbhopal.ac.in</a></p>
+        </div>
 
-<div class="container">
-    <h2>Welcome to My Assignments</h2>
-    <p><strong>Reg. No:</strong> 22BHI10079</p>
-    <p><strong>Email:</strong> <a href="mailto:kartikeyvishwakarma2022@vitbhopal.ac.in">kartikeyvishwakarma2022@vitbhopal.ac.in</a></p>
+        <div class="task-section">
+            <h2>HTML Tasks</h2>
+            <ul class="task-list">
+                <li><a href="./htmltask/task1.html" target="_blank" rel="noopener noreferrer">Task 1 - Basic HTML Structure</a></li>
+                <li><a href="./htmltask/task2.html" target="_blank" rel="noopener noreferrer">Task 2 - Forms and Inputs</a></li>
+                <li><a href="./htmltask/task3.html" target="_blank" rel="noopener noreferrer">Task 3 - Semantic HTML</a></li>
+                <li><a href="./htmltask/task4.html" target="_blank" rel="noopener noreferrer">Task 4 - HTML Tables</a></li>
+                <li><a href="./htmltask/task5.html" target="_blank" rel="noopener noreferrer">Task 5 - Multimedia Embedding</a></li>
+            </ul>
+        </div>
 
-    <h3>HTML Tasks</h3>
-    <ul class="task-list">
-        <li><a href="./htmltask/task1.html" target="_blank">Task 1 of HTML</a></li>
-        <li><a href="./htmltask/task2.html" target="_blank">Task 2 of HTML</a></li>
-        <li><a href="./htmltask/task3.html" target="_blank">Task 3 of HTML</a></li>
-        <li><a href="./htmltask/task4.html" target="_blank">Task 4 of HTML</a></li>
-        <li><a href="./htmltask/task5.html" target="_blank">Task 5 of HTML</a></li>
-    </ul>
+        <div class="task-section">
+            <h2>CSS Tasks</h2>
+            <ul class="task-list">
+                <li><a href="./csstask/task1.html" target="_blank" rel="noopener noreferrer">Task 1 - Basic Styling</a></li>
+                <li><a href="./csstask/task2.html" target="_blank" rel="noopener noreferrer">Task 2 - Layout Techniques</a></li>
+                <li><a href="./csstask/task3.html" target="_blank" rel="noopener noreferrer">Task 3 - Responsive Design</a></li>
+                <li><a href="./csstask/task4.html" target="_blank" rel="noopener noreferrer">Task 4 - CSS Animations</a></li>
+                <li><a href="./csstask/task5.html" target="_blank" rel="noopener noreferrer">Task 5 - Flexbox Layout</a></li>
+                <li><a href="./csstask/task6.html" target="_blank" rel="noopener noreferrer">Task 6 - Grid Layout</a></li>
+                <li><a href="./csstask/task7.html" target="_blank" rel="noopener noreferrer">Task 7 - Advanced Selectors</a></li>
+            </ul>
+        </div>
 
-    <h3>CSS Tasks</h3>
-    <ul class="task-list">
-        <li><a href="./csstask/task1.html" target="_blank">Task 1 of CSS</a></li>
-        <li><a href="./csstask/task2.html" target="_blank">Task 2 of CSS</a></li>
-        <li><a href="./csstask/task3.html" target="_blank">Task 3 of CSS</a></li>
-        <li><a href="./csstask/task4.html" target="_blank">Task 4 of CSS</a></li>
-        <li><a href="./csstask/task5.html" target="_blank">Task 5 of CSS</a></li>
-        <li><a href="./csstask/task6.html" target="_blank">Task 6 of CSS</a></li>
-        <li><a href="./csstask/task7.html" target="_blank">Task 7 of CSS</a></li>
-    </ul>
+        <div class="task-section">
+            <h2>Bootstrap Tasks</h2>
+            <ul class="task-list">
+                <li><a href="./Bootstraptask/task1.html" target="_blank" rel="noopener noreferrer">Task 1 - Basic Template</a></li>
+                <li><a href="./Bootstraptask/task2.html" target="_blank" rel="noopener noreferrer">Task 2 - Responsive Grid</a></li>
+                <li><a href="./Bootstraptask/task3.html" target="_blank" rel="noopener noreferrer">Task 3 - Bootstrap Components</a></li>
+                <li><a href="./Bootstraptask/task4.html" target="_blank" rel="noopener noreferrer">Task 4 - Navigation Systems</a></li>
+                <li><a href="./Bootstraptask/task5.html" target="_blank" rel="noopener noreferrer">Task 5 - Custom Styling</a></li>
+                <li><a href="./Bootstraptask/task6.html" target="_blank" rel="noopener noreferrer">Task 6 - Bootstrap Utilities</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <h3>Bootstrap Tasks</h3>
-    <ul class="task-list">
-        <li><a href="./Bootstraptask/task1.html" target="_blank">Task 1 of Bootstrap</a></li>
-        <li><a href="./Bootstraptask/task2.html" target="_blank">Task 2 of Bootstrap</a></li>
-        <li><a href="./Bootstraptask/task3.html" target="_blank">Task 3 of Bootstrap</a></li>
-        <li><a href="./Bootstraptask/task4.html" target="_blank">Task 4 of Bootstrap</a></li>
-        <li><a href="./Bootstraptask/task5.html" target="_blank">Task 5 of Bootstrap</a></li>
-        <li><a href="./Bootstraptask/task6.html" target="_blank">Task 6 of Bootstrap</a></li>
-    </ul>
-</div>
-
-
-
+    <footer>
+        <p>&copy; 2023 Kartikey Vishwakarma. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
