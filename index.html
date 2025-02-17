@@ -3,284 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 ETHNUS MERN ASSIGNMENTS 🔥</title>
+    <meta name="description" content="VIT Ethnus MERN Certification Assignments by Kartikey Vishwakarma">
+    <title>VIT Ethnus Mern Certification Assignment 1</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Bangers&display=swap');
-        
         :root {
-            --neon-pink: #ff00ff;
-            --neon-green: #39ff14;
-            --neon-cyan: #00ffff;
-            --black-light: #0a0a0a;
+            --primary-color: #007BFF;
+            --secondary-color: #2c3e50;
+            --background-color: #f8f9fa;
+            --accent-color: #e74c3c;
         }
 
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             min-height: 100vh;
-            background: linear-gradient(
-                45deg,
-                #ff0000,
-                #ff7300,
-                #fffb00,
-                #48ff00,
-                #00ffd5,
-                #002bff,
-                #7a00ff,
-                #ff00c8,
-                #ff0000
-            );
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            font-family: 'Comic Neue', cursive;
-            overflow-x: hidden;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            display: flex;
+            flex-direction: column;
+            background-color: var(--background-color);
+            line-height: 1.6;
         }
 
         header {
-            background: rgba(0,0,0,0.9);
-            padding: 3rem;
-            transform: skewY(-3deg);
-            margin: 2rem 0;
-            border: 5px solid var(--neon-cyan);
-            box-shadow: 0 0 50px var(--neon-cyan);
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: slideDown 0.8s ease-out;
         }
 
-        h1 {
-            font-family: 'Bangers', cursive;
-            font-size: 4rem;
-            color: var(--neon-pink);
-            text-shadow: 0 0 30px var(--neon-pink);
-            margin: 0;
-            animation: glitch 1s infinite;
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 2rem;
-            perspective: 1000px;
         }
 
         .task-section {
-            background: rgba(0,0,0,0.8);
-            border-radius: 20px;
+            background: white;
+            border-radius: 12px;
             padding: 2rem;
-            transform-style: preserve-3d;
-            transition: all 0.5s;
-            border: 3px dashed var(--neon-green);
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .task-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .task-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .task-list li {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
             position: relative;
             overflow: hidden;
         }
 
-        .task-section::before {
+        .task-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .task-list li::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(
-                45deg,
+                90deg,
                 transparent,
-                var(--neon-cyan),
+                rgba(0,123,255,0.1),
                 transparent
             );
-            animation: rotate 4s linear infinite;
+            transition: left 0.6s;
         }
 
-        .task-section:hover {
-            transform: rotateY(20deg) rotateX(10deg) scale(1.1);
-            box-shadow: 0 0 50px var(--neon-pink);
-        }
-
-        h2 {
-            color: var(--neon-green);
-            font-size: 2.5rem;
-            text-shadow: 0 0 20px var(--neon-green);
-            margin: 0 0 2rem 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .task-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .task-list li {
-            margin: 1rem 0;
-            padding: 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            transition: all 0.3s;
-            transform: rotateZ(calc(var(--i) * 2deg));
-        }
-
-        .task-list li:hover {
-            transform: rotateZ(0deg) scale(1.2) translateX(30px);
-            background: rgba(255,0,255,0.3);
+        .task-list li:hover::before {
+            left: 100%;
         }
 
         a {
-            color: var(--neon-cyan);
+            color: var(--primary-color);
             text-decoration: none;
-            font-size: 1.2rem;
             display: block;
+            transition: color 0.3s ease;
             position: relative;
-            padding-left: 20px;
+            padding-left: 24px;
         }
 
         a::before {
-            content: '🤪';
+            content: '➜';
             position: absolute;
-            left: -20px;
-            animation: jump 1s infinite;
+            left: 0;
+            opacity: 0.7;
+            transition: transform 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        a:hover::before {
+            transform: translateX(4px);
         }
 
         footer {
-            background: #000;
-            padding: 2rem;
-            margin-top: 5rem;
-            border-top: 5px solid var(--neon-pink);
-            position: relative;
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            border-top: 3px solid var(--accent-color);
+            animation: slideUp 0.8s ease-out;
         }
 
-        footer::after {
-            content: '🔥 MERN MADNESS 🔥';
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #000;
-            color: var(--neon-green);
-            padding: 0 1rem;
-            font-size: 2rem;
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
-        @keyframes glitch {
-            0% { text-shadow: 5px 5px var(--neon-cyan); }
-            50% { text-shadow: -5px -5px var(--neon-green); }
-            100% { text-shadow: 5px 5px var(--neon-cyan); }
-        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.2rem;
+            }
+            
+            .task-section {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes jump {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-
-        /* Crazy mode toggle */
-        .crazy-mode {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 1rem 2rem;
-            background: var(--neon-pink);
-            border: none;
-            border-radius: 50px;
-            font-family: 'Bangers';
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .crazy-mode:hover {
-            transform: scale(1.2) rotate(360deg);
-            background: var(--neon-green);
+            h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🚀 KR4ZY MERN ZONE 🚀</h1>
-        <p style="color: var(--neon-cyan); font-size: 2rem; text-align: center;">
-            BY: K4RT1K3Y V!5HW4K4RM4
-        </p>
+        <h1>VIT Ethnus MERN Certification Assignment 1</h1>
+        <p>By: Kartikey Vishwakarma</p>
     </header>
 
     <div class="container">
-        <!-- Student Info Section -->
-        <div class="task-section" style="grid-column: 1 / -1;">
-            <h2>👽 STUDENT INFO 👽</h2>
-            <div style="color: var(--neon-cyan); font-size: 1.5rem;">
-                <p>🔑 Reg. No: <span style="color: var(--neon-pink);">22BHI10079</span></p>
-                <p>📧 Email: <a href="mailto:kartikeyvishwakarma2022@vitbhopal.ac.in" style="display: inline;">kartikeyvishwakarma2022@vitbhopal.ac.in</a></p>
-            </div>
+        <div class="task-section" style="animation-delay: 0.2s;">
+            <h2>Student Information</h2>
+            <p><strong>Reg. No:</strong> 22BHI10079</p>
+            <p><strong>Email:</strong> <a href="mailto:kartikeyvishwakarma2022@vitbhopal.ac.in">kartikeyvishwakarma2022@vitbhopal.ac.in</a></p>
         </div>
 
-        <!-- HTML Tasks -->
-        <div class="task-section">
-            <h2>💥 HTML TASKS 💥</h2>
+        <div class="task-section" style="animation-delay: 0.4s;">
+            <h2>HTML Tasks</h2>
             <ul class="task-list">
-                <li style="--i: 1"><a href="./htmltask/task1.html">TASK 1 - HTML MADNESS</a></li>
-                <li style="--i: 2"><a href="./htmltask/task2.html">TASK 2 - FORM CHAOS</a></li>
-                <li style="--i: 3"><a href="./htmltask/task3.html">TASK 3 - SEMANTIC MAYHEM</a></li>
-                <li style="--i: 4"><a href="./htmltask/task4.html">TASK 4 - TABLE TORNADO</a></li>
-                <li style="--i: 5"><a href="./htmltask/task5.html">TASK 5 - MEDIA EXPLOSION</a></li>
+                <li><a href="./htmltask/task1.html" target="_blank" rel="noopener noreferrer">Task 1 - Basic HTML Structure</a></li>
+                <li><a href="./htmltask/task2.html" target="_blank" rel="noopener noreferrer">Task 2 - Forms and Inputs</a></li>
+                <li><a href="./htmltask/task3.html" target="_blank" rel="noopener noreferrer">Task 3 - Semantic HTML</a></li>
+                <li><a href="./htmltask/task4.html" target="_blank" rel="noopener noreferrer">Task 4 - HTML Tables</a></li>
+                <li><a href="./htmltask/task5.html" target="_blank" rel="noopener noreferrer">Task 5 - Multimedia Embedding</a></li>
             </ul>
         </div>
 
-        <!-- CSS Tasks -->
-        <div class="task-section">
-            <h2>🎨 CSS CHAOS 🎨</h2>
+        <div class="task-section" style="animation-delay: 0.6s;">
+            <h2>CSS Tasks</h2>
             <ul class="task-list">
-                <li style="--i: -1"><a href="./csstask/task1.html">TASK 1 - STYLE STORM</a></li>
-                <li style="--i: -2"><a href="./csstask/task2.html">TASK 2 - LAYOUT LUNACY</a></li>
-                <li style="--i: -3"><a href="./csstask/task3.html">TASK 3 - RESPONSIVE RAGE</a></li>
-                <li style="--i: -4"><a href="./csstask/task4.html">TASK 4 - ANIMATION APOCALYPSE</a></li>
+                <li><a href="./csstask/task1.html" target="_blank" rel="noopener noreferrer">Task 1 - Basic Styling</a></li>
+                <li><a href="./csstask/task2.html" target="_blank" rel="noopener noreferrer">Task 2 - Layout Techniques</a></li>
+                <li><a href="./csstask/task3.html" target="_blank" rel="noopener noreferrer">Task 3 - Responsive Design</a></li>
+                <li><a href="./csstask/task4.html" target="_blank" rel="noopener noreferrer">Task 4 - CSS Animations</a></li>
+                <li><a href="./csstask/task5.html" target="_blank" rel="noopener noreferrer">Task 5 - Flexbox Layout</a></li>
+                <li><a href="./csstask/task6.html" target="_blank" rel="noopener noreferrer">Task 6 - Grid Layout</a></li>
+                <li><a href="./csstask/task7.html" target="_blank" rel="noopener noreferrer">Task 7 - Advanced Selectors</a></li>
             </ul>
         </div>
 
-        <!-- Bootstrap Tasks -->
-        <div class="task-section">
-            <h2>💩 BOOTSTRAP BLAST 💩</h2>
+        <div class="task-section" style="animation-delay: 0.8s;">
+            <h2>Bootstrap Tasks</h2>
             <ul class="task-list">
-                <li style="--i: 2"><a href="./Bootstraptask/task1.html">TASK 1 - TEMPLATE TYPHOON</a></li>
-                <li style="--i: -2"><a href="./Bootstraptask/task2.html">TASK 2 - GRID GRAVITY</a></li>
-                <li style="--i: 3"><a href="./Bootstraptask/task3.html">TASK 3 - COMPONENT CRUSHER</a></li>
+                <li><a href="./Bootstraptask/task1.html" target="_blank" rel="noopener noreferrer">Task 1 - Basic Template</a></li>
+                <li><a href="./Bootstraptask/task2.html" target="_blank" rel="noopener noreferrer">Task 2 - Responsive Grid</a></li>
+                <li><a href="./Bootstraptask/task3.html" target="_blank" rel="noopener noreferrer">Task 3 - Bootstrap Components</a></li>
+                <li><a href="./Bootstraptask/task4.html" target="_blank" rel="noopener noreferrer">Task 4 - Navigation Systems</a></li>
+                <li><a href="./Bootstraptask/task5.html" target="_blank" rel="noopener noreferrer">Task 5 - Custom Styling</a></li>
+                <li><a href="./Bootstraptask/task6.html" target="_blank" rel="noopener noreferrer">Task 6 - Bootstrap Utilities</a></li>
             </ul>
         </div>
     </div>
 
     <footer>
-        <p style="color: var(--neon-pink); font-size: 1.5rem; margin: 0;">
-            
-        </p>
+        <p>&copy; 2025 Kartikey Vishwakarma. All Rights Reserved.</p>
     </footer>
-
-    <button class="crazy-mode" onclick="document.body.classList.toggle('super-crazy')">
-        TURBO MODE!!!
-    </button>
-
-    <script>
-        // Add random rotation to sections on mouse move
-        document.addEventListener('mousemove', (e) => {
-            const sections = document.querySelectorAll('.task-section');
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                section.style.transform = `
-                    rotateY(${(x - rect.width/2) / 10}deg)
-                    rotateX(${-(y - rect.height/2) / 10}deg)
-                `;
-            });
-        });
-    </script>
 </body>
 </html>
